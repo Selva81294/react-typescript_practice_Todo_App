@@ -1,38 +1,126 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  background-color: plum;
+  color: rgb(134, 6, 76);
+}
+.App{
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 20px;
   display: flex;
   flex-direction: column;
+}
+.todo{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo_field{
+  position: absolute;
+  top: 10px;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.todo_field > input{
+  height: 30px;
+  border-radius: 20px;
+  color: rgb(119, 17, 119);;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgb(233, 30, 233);;
+  box-shadow: 5px 5px rgb(201, 60, 107);
+}
+.todo_field > input:focus{
+  outline: 1px solid rgb(233, 30, 233);
+  color: rgb(119, 17, 119);
+}
+.todo_field > button{
+  font-size: 16px;
+  margin: 10px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  bottom: 5px;
+  height: 20px;
+  padding: 2px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.all_todos{
+  position: relative;
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid rgb(119, 17, 119);
+  border-radius: 10px;
+}
+.single_todos{
+  display: flex;
+}
+.todos_icons{
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+.active{
+  background-color: lightgreen;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin: 10px;
+  padding: 10px;
+}
+.active > p{
+  background-color: lightgreen;
+  font-size: 20px;
+  font-weight: bold;
+}
+.completed{
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  background-color: lightcoral;
+  border-radius: 10px;
+  position: relative;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+.completed > p{
+  background-color: lightcoral;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.dragActive{
+  background-color: rgb(98, 236, 98);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.dragRemove{
+  background-color: rgb(231, 55, 55);
+}
+
+.todoDrag{
+  box-shadow: 2px 2px rgb(201, 60, 107);
+}
+
+@media screen and (max-width: 540px)  {
+  .todo{
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .active, .completed{
+    width: 90%;
   }
 }
+
